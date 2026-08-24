@@ -1,6 +1,6 @@
 # SPEC 01 — Feed como home (`/`)
 
-> **Estado:** Borrador
+> **Estado:** Aprobado
 > **Depende de:** ninguna
 > **Fecha:** 2026-08-23
 > **Objetivo:** Implementar la plantilla `references/pantallas/feed.dc.html` como página home (`/`) con estilo idéntico al mockup, datos mock locales y adaptación móvil básica.
