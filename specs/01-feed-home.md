@@ -65,12 +65,12 @@ export const usuarioActual = {
 
 ## Acceptance criteria
 
-- [ ] `/` renderiza sidebar + feed con los colores exactos del mockup (fondo `#F6ECDF`, tarjetas `#FFFDF9`, bordes `#ECE0D0`) y las fuentes Fredoka/Nunito aplicadas.
-- [ ] La comparación con `references/screenshots/feed.png` no muestra diferencias visibles a simple vista en desktop.
-- [ ] Los 3 posts muestran el contenido exacto del mockup (textos, horas, badges, contadores 3/1, 5/2, 8/0).
-- [ ] Cada enlace navega a su ruta futura (`/ninos`, `/avisos`, `/mi-cuenta`, `/crear-publicacion`, `/detalle-publicacion`, `/foto`, `/login`) y todas dan 404 por ahora.
-- [ ] En viewport `<768px` hay header con hamburguesa que abre/cierra el drawer con los 4 ítems, y un FAB "+" flotante.
-- [ ] Sin errores en consola; `npx tsc --noEmit`, `npm run lint` y `npm run build` pasan.
+- [x] `/` renderiza sidebar + feed con los colores exactos del mockup (fondo `#F6ECDF`, tarjetas `#FFFDF9`, bordes `#ECE0D0`) y las fuentes Fredoka/Nunito aplicadas.
+- [x] La comparación con `references/screenshots/feed.png` no muestra diferencias visibles a simple vista en desktop.
+- [x] Los 3 posts muestran el contenido exacto del mockup (textos, horas, badges, contadores 3/1, 5/2, 8/0).
+- [x] Cada enlace navega a su ruta futura (`/ninos`, `/avisos`, `/mi-cuenta`, `/crear-publicacion`, `/detalle-publicacion`, `/foto`, `/login`) y todas dan 404 por ahora.
+- [x] En viewport `<768px` hay header con hamburguesa que abre/cierra el drawer con los 4 ítems, y un FAB "+" flotante.
+- [x] Sin errores en consola; `npx tsc --noEmit`, `npm run lint` y `npm run build` pasan.
 
 ## Decisions
 

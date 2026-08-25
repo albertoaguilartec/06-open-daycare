@@ -37,6 +37,7 @@ Daycare app. Next.js 16.3.2 (App Router only, `app/`) + React 19 + Tailwind CSS 
 ## Spec Driven Development
 - /spec Usaremos esta habilidad para crear las especificaciones.
 - /spec-impl Usaremos esta habilidad para crear la implementación de las especificaciones
+- /spec-verifier Usaremos esta habilidad para verificar criterios de aceptación de specs contra código y mockups visuales. Marca checks en el spec y genera reporte.
 
 ## Reglas de código
 
