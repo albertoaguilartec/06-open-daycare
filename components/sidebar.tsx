@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { usuarioActual } from "@/lib/feed-data";
 
-export function Sidebar() {
+type NavItem = "feed" | "ninos" | "avisos" | "mi-cuenta";
+
+export function Sidebar({ activeItem = "feed" }: { activeItem?: NavItem }) {
   return (
     <aside className="hidden md:flex w-[248px] flex-none bg-[#FFFDF9] border-r border-[#ECE0D0] flex-col p-6 px-4 sticky top-0 h-screen">
       <Link
@@ -55,7 +57,11 @@ export function Sidebar() {
       <nav className="flex flex-col gap-1 flex-1">
         <Link
           href="/"
-          className="flex items-center gap-3 py-[11px] px-3 rounded-xl bg-[#FBE3D8] text-[#D9583C] font-extrabold text-[14.5px]"
+          className={`flex items-center gap-3 py-[11px] px-3 rounded-xl text-[14.5px] ${
+            activeItem === "feed"
+              ? "bg-[#FBE3D8] text-[#D9583C] font-extrabold"
+              : "bg-transparent text-[#6E6359] font-semibold"
+          }`}
         >
           <svg
             width="19"
@@ -73,7 +79,11 @@ export function Sidebar() {
         </Link>
         <Link
           href="/ninos"
-          className="flex items-center gap-3 py-[11px] px-3 rounded-xl bg-transparent text-[#6E6359] font-semibold text-[14.5px]"
+          className={`flex items-center gap-3 py-[11px] px-3 rounded-xl text-[14.5px] ${
+            activeItem === "ninos"
+              ? "bg-[#FBE3D8] text-[#D9583C] font-extrabold"
+              : "bg-transparent text-[#6E6359] font-semibold"
+          }`}
         >
           <svg
             width="19"
@@ -93,7 +103,11 @@ export function Sidebar() {
         </Link>
         <Link
           href="/avisos"
-          className="flex items-center gap-3 py-[11px] px-3 rounded-xl bg-transparent text-[#6E6359] font-semibold text-[14.5px]"
+          className={`flex items-center gap-3 py-[11px] px-3 rounded-xl text-[14.5px] ${
+            activeItem === "avisos"
+              ? "bg-[#FBE3D8] text-[#D9583C] font-extrabold"
+              : "bg-transparent text-[#6E6359] font-semibold"
+          }`}
         >
           <svg
             width="19"
@@ -111,7 +125,11 @@ export function Sidebar() {
         </Link>
         <Link
           href="/mi-cuenta"
-          className="flex items-center gap-3 py-[11px] px-3 rounded-xl bg-transparent text-[#6E6359] font-semibold text-[14.5px]"
+          className={`flex items-center gap-3 py-[11px] px-3 rounded-xl text-[14.5px] ${
+            activeItem === "mi-cuenta"
+              ? "bg-[#FBE3D8] text-[#D9583C] font-extrabold"
+              : "bg-transparent text-[#6E6359] font-semibold"
+          }`}
         >
           <svg
             width="19"
