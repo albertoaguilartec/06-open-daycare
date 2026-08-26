@@ -2,11 +2,20 @@ import Link from "next/link";
 import type { Publicacion } from "@/lib/feed-data";
 
 const badgeConfig = {
-  logro: {
-    label: "LOGRO",
-    bg: "bg-[#CFEBD8]",
-    dot: "bg-[#3E9B6C]",
-    text: "text-[#3E9B6C]",
+  comida: {
+    label: "COMIDA",
+    bg: "bg-[#9A7B1E]",
+    dot: "bg-[#9A7B1E]",
+    text: "text-[#9A7B1E]",
+    avatarBg: "bg-[#A9D9E8]",
+    avatarText: "text-[#1F7A93]",
+    initial: "M",
+  },
+  siesta: {
+    label: "SIESTA",
+    bg: "bg-[#E7DCF6]",
+    dot: "bg-[#7B5FC0]",
+    text: "text-[#7B5FC0]",
     avatarBg: "bg-[#A9D9E8]",
     avatarText: "text-[#1F7A93]",
     initial: "M",
@@ -16,6 +25,33 @@ const badgeConfig = {
     bg: "bg-[#C7E7F1]",
     dot: "bg-[#2E89A6]",
     text: "text-[#2E89A6]",
+    avatarBg: "bg-[#A9D9E8]",
+    avatarText: "text-[#1F7A93]",
+    initial: "M",
+  },
+  logro: {
+    label: "LOGRO",
+    bg: "bg-[#CFEBD8]",
+    dot: "bg-[#3E9B6C]",
+    text: "text-[#3E9B6C]",
+    avatarBg: "bg-[#A9D9E8]",
+    avatarText: "text-[#1F7A93]",
+    initial: "M",
+  },
+  animo: {
+    label: "ÁNIMO",
+    bg: "bg-[#F9D2DE]",
+    dot: "bg-[#C56486]",
+    text: "text-[#C56486]",
+    avatarBg: "bg-[#F4B8CC]",
+    avatarText: "text-[#C44A7A]",
+    initial: "S",
+  },
+  foto: {
+    label: "FOTO",
+    bg: "bg-[#FBD8CC]",
+    dot: "bg-[#D9684A]",
+    text: "text-[#D9684A]",
     avatarBg: "bg-[#A9D9E8]",
     avatarText: "text-[#1F7A93]",
     initial: "M",
@@ -165,12 +201,9 @@ export function PostCard({ post }: { post: Publicacion }) {
           {post.comentarios}
         </Link>
         <span className="flex-1" />
-        <Link
-          href="/crear-publicacion"
-          className="text-[#C5503A] font-extrabold text-sm"
-        >
+        <span className="text-[#C5503A] font-extrabold text-sm cursor-default">
           Editar
-        </Link>
+        </span>
       </div>
     </article>
   );

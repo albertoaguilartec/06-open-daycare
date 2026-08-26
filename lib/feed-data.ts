@@ -1,4 +1,28 @@
-export type TipoPost = "logro" | "actividad" | "anuncio";
+export type TipoPost =
+  | "comida"
+  | "siesta"
+  | "actividad"
+  | "logro"
+  | "animo"
+  | "foto"
+  | "anuncio";
+
+export interface TipoPublicacionConfig {
+  id: TipoPost;
+  label: string;
+  bgColor: string;
+  textColor: string;
+}
+
+export const tiposPublicacion: TipoPublicacionConfig[] = [
+  { id: "comida", label: "Comida", bgColor: "#9A7B1E", textColor: "#FFFFFF" },
+  { id: "siesta", label: "Siesta", bgColor: "#E7DCF6", textColor: "#7B5FC0" },
+  { id: "actividad", label: "Actividad", bgColor: "#2E89A6", textColor: "#FFFFFF" },
+  { id: "logro", label: "Logro", bgColor: "#CFEBD8", textColor: "#3E9B6C" },
+  { id: "animo", label: "Ánimo", bgColor: "#F9D2DE", textColor: "#C56486" },
+  { id: "foto", label: "Foto", bgColor: "#FBD8CC", textColor: "#D9684A" },
+  { id: "anuncio", label: "Anuncio", bgColor: "#CCD8F4", textColor: "#4E72C8" },
+];
 
 export interface Publicacion {
   id: string;

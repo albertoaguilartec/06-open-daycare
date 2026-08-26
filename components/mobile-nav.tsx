@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { CrearPublicacionModal } from "@/components/crear-publicacion-modal";
 
 export function MobileNav() {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
@@ -79,9 +81,12 @@ export function MobileNav() {
               </span>
             </div>
 
-            <Link
-              href="/crear-publicacion"
-              className="flex items-center justify-center gap-2 w-full py-3 rounded-[14px] bg-gradient-to-b from-[#F4977E] to-[#EE8164] text-white font-extrabold text-[14.5px] shadow-[0_8px_18px_-8px_rgba(238,129,100,0.75)] mb-5"
+            <button
+              onClick={() => {
+                setDrawerOpen(false);
+                setShowModal(true);
+              }}
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-[14px] bg-gradient-to-b from-[#F4977E] to-[#EE8164] text-white font-extrabold text-[14.5px] shadow-[0_8px_18px_-8px_rgba(238,129,100,0.75)] mb-5 cursor-pointer"
             >
               <svg
                 width="17"
@@ -96,7 +101,7 @@ export function MobileNav() {
                 <path d="M12 5v14M5 12h14" />
               </svg>
               Nueva publicación
-            </Link>
+            </button>
 
             <nav className="flex flex-col gap-1 flex-1">
               <Link
@@ -217,9 +222,9 @@ export function MobileNav() {
         </div>
       )}
 
-      <Link
-        href="/crear-publicacion"
-        className="md:hidden fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-gradient-to-br from-[#F4977E] to-[#EE8164] text-white shadow-[0_8px_20px_-4px_rgba(238,129,100,0.7)] flex items-center justify-center"
+      <button
+        onClick={() => setShowModal(true)}
+        className="md:hidden fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-gradient-to-br from-[#F4977E] to-[#EE8164] text-white shadow-[0_8px_20px_-4px_rgba(238,129,100,0.7)] flex items-center justify-center cursor-pointer"
         aria-label="Nueva publicación"
       >
         <svg
@@ -234,7 +239,12 @@ export function MobileNav() {
         >
           <path d="M12 5v14M5 12h14" />
         </svg>
-      </Link>
+      </button>
+
+      <CrearPublicacionModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+      />
     </>
   );
 }
