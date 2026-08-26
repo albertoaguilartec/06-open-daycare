@@ -28,6 +28,13 @@ export const salaActual = {
   nombre: "Sala Soles",
 };
 
+export const salas = [
+  { id: "soles", nombre: "Soles" },
+  { id: "lunas", nombre: "Lunas" },
+  { id: "estrellas", nombre: "Estrellas" },
+  { id: "solesito", nombre: "Solesito" },
+];
+
 export const ninos: Nino[] = [
   {
     id: "mateo-fernandez",
