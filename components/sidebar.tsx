@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { usuarioActual } from "@/lib/feed-data";
+import { NuevaPublicacionButton } from "@/components/nueva-publicacion-button";
 
 type NavItem = "feed" | "ninos" | "avisos" | "mi-cuenta";
 
@@ -35,24 +36,7 @@ export function Sidebar({ activeItem = "feed" }: { activeItem?: NavItem }) {
         </div>
       </Link>
 
-      <Link
-        href="/crear-publicacion"
-        className="flex items-center justify-center gap-2 w-full py-3 rounded-[14px] bg-gradient-to-b from-[#F4977E] to-[#EE8164] text-white font-extrabold text-[14.5px] shadow-[0_8px_18px_-8px_rgba(238,129,100,0.75)] mb-[18px]"
-      >
-        <svg
-          width="17"
-          height="17"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#fff"
-          strokeWidth="2.4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M12 5v14M5 12h14" />
-        </svg>
-        Nueva publicación
-      </Link>
+      <NuevaPublicacionButton />
 
       <nav className="flex flex-col gap-1 flex-1">
         <Link
