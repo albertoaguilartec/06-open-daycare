@@ -1,8 +1,14 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { Sidebar } from "@/components/sidebar";
 import { ninos } from "@/lib/ninos-data";
+import { AddChildModal } from "@/components/add-child-modal";
 
 export default function NinosPage() {
+  const [showAddModal, setShowAddModal] = useState(false);
+
   return (
     <div className="flex min-h-screen bg-[#F6ECDF]">
       <Sidebar activeItem="ninos" />
@@ -18,8 +24,9 @@ export default function NinosPage() {
                 Niños
               </h1>
             </div>
-            <Link
-              href="/agregar-nino"
+            <button
+              type="button"
+              onClick={() => setShowAddModal(true)}
               className="flex items-center gap-2 py-[11px] px-[18px] rounded-[14px] bg-gradient-to-b from-[#F4977E] to-[#EE8164] text-white font-extrabold text-[14.5px] shadow-[0_8px_18px_-8px_rgba(238,129,100,0.7)]"
             >
               <svg
@@ -35,7 +42,7 @@ export default function NinosPage() {
                 <path d="M12 5v14M5 12h14" />
               </svg>
               Agregar niño
-            </Link>
+            </button>
           </div>
 
           <div className="flex items-center gap-[11px] bg-[#FFFDF9] border border-[#ECE0D0] rounded-[14px] py-3 px-4 mb-[22px]">
@@ -121,6 +128,8 @@ export default function NinosPage() {
               </Link>
             ))}
           </div>
+
+          <AddChildModal open={showAddModal} onClose={() => setShowAddModal(false)} />
         </div>
       </main>
     </div>
